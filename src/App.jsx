@@ -2,7 +2,7 @@ import { Header } from "./components/Header";
 
 import styles from "./App.module.css";
 import Sidebar from "./components/Sidebar";
-import Post from "./components/Post";
+import { Post } from "./components/Post";
 import Comment from "./components/Comment";
 import "./global.css";
 
@@ -28,7 +28,7 @@ const posts = [
   {
     id: 2,
     author: {
-      avatarUrl: "https://github.com/guirdy.png",
+      avatarUrl: "https://github.com/maykbrito.png",
       name: "Mayk Brito",
       role: "Educator @Rocketseat",
     },
@@ -55,6 +55,7 @@ export function App() {
           {posts.map((post) => {
             return (
               <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
